@@ -19,4 +19,4 @@ pip install -r req.txt
 Run the main.py file with python and a terminal will pop up. Enjoy!
 
 
-## Or else you could have saved some time by just going to the realise page and run the exe.
+## Or else you could have saved some time by just going to the release page and run the exe.
