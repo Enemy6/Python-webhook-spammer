@@ -16,4 +16,7 @@ Install the requirements with
 pip install -r req.txt
 ```
 ### Step 4 
-Run the .py file with python enjoy!
+Run the main.py file with python and a terminal will pop up. Enjoy!
+
+
+## Or else you could have saved some time by just going to the realise page and run the exe.
