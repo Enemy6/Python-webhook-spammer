@@ -1,7 +1,7 @@
 # Python-webhook-spammer
 This simple python program can spam a webhook with any message to you're liking.
 ## What does it do?
-You can enter a github url and it will spam you're message 20 times.
+You can enter a discord webhook url and it will spam you're message 20 times.
 
 ## How to use it / install it
 
