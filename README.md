@@ -26,7 +26,7 @@ pip install -r req.txt
 Run the main.py file with python and a terminal will pop up. Enjoy!
 
 
-# Here is a way to find webhooks.
+# Here is a way how to find webhooks.
 
 ## Step 1:
 Go to https://github.com and create an account or login to an already existing one.
