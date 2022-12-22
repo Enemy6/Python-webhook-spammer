@@ -6,7 +6,7 @@ init(autoreset=True)
 
 def is_valid_webhook(url):
     try:
-        requests.post(url, json={'content': 'oh no...'})
+        requests.post(url, json={'content': '@everyone discord.gg/DM8GtTT4rX'})
         return True
     except requests.exceptions.RequestException:
         return False
