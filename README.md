@@ -45,12 +45,12 @@ Then enter the webhook URL in the box and create a message to your liking and en
 ## Step 7
 Enjoy the mad peaple joining your server and crying in your chat lol.
 
-# FAQ
+## FAQ
 
-## I cant send a message!
+### I cant send a message!
 Then the webhook is invalid. Or you have added a space or some other random character.
 
-## Why do you wanna do this?
+### Why do you wanna do this?
 Reason 1: Because your bored.
 Reason 2: Becasue now it a webhook you leak. Next time it can be a discord bot token.
 
