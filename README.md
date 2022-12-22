@@ -41,11 +41,7 @@ Select the **Recently indexed** option.
 You will see random people post something like this and if you see something like this copy the webhook URL. 
 ![image](https://user-images.githubusercontent.com/114680621/207136936-f8deee3b-4f44-475c-a2b1-90858074fef7.png)
 ## Step 6 
-Go to this website : 
-```sh
-https://discohook.org
-```
-Then enter the webhook URL in the box and create a message to your liking and then spam the **send** button.
+Then enter the webhook URL in the box and create a message to your liking and enter the amount you wanna send that message (I recomend around 5 to 25 messages or you will be rate limited)
 ## Step 7
 Enjoy the mad peaple joining your server and crying in your chat lol.
 
