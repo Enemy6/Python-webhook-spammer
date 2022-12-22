@@ -9,7 +9,7 @@ You can enter a discord webhook url and it will spam you're message 20 times.
 Go to https://www.python.org/downloads/ and download the latest version of  python.
 Make sure to select these options:
 
-![image](https://user-images.githubusercontent.com/114680621/209131231-d3950b1b-cdb3-4155-8085-02b9568863e1.png)
+![image](https://user-images.githubusercontent.com/114680621/209131496-abe55da5-8449-4348-bf97-603d6e909a2c.png)
 
 ### Step 2 
 Clone this repository
