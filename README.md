@@ -7,6 +7,9 @@ You can enter a discord webhook url and it will spam you're message 20 times.
 
 ### Step 1
 Go to https://www.python.org/downloads/ and download the latest version of  python.
+Make sure to select these options:
+
+![image](https://user-images.githubusercontent.com/114680621/209131231-d3950b1b-cdb3-4155-8085-02b9568863e1.png)
 
 ### Step 2 
 Clone this repository
