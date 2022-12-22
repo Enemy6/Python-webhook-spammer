@@ -19,7 +19,7 @@ Install the requirements with
 pip install -r req.txt
 ```
 ### Step 4 
-![image](https://user-images.githubusercontent.com/114680621/209130961-3cbfa15b-a9f2-44f6-b9a2-1536eff2cfa5.png)
+![image](https://user-images.githubusercontent.com/114680621/209131018-1b5ccd2b-6038-4eea-b1f3-e5ab11a1e777.png)
 Run the main.py file with python and a terminal will pop up. Enjoy!
 
 
