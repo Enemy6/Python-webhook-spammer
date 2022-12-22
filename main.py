@@ -19,26 +19,30 @@ while True:
       "\n"
       "                 Author: Kars#9142\n"
       "                 GitHub: https://github.com/ArabicCat\n\n")
-    url = input(Fore.GREEN + "Enter the url you wanna spam \n> ")
+    url = input(Fore.GREEN + "Enter the url you wanna spam (leave empty for default) \n> ")
 
     if not is_valid_webhook(url):
         print(Fore.RED + "Error: Invalid webhook URL")
         continue
 
-    # Save the URL to the log file
-    with open("logs.txt", "a") as log_file:
-        log_file.write(url + "\n" + "\n")
+    msg = input(Fore.GREEN + "\nEnter the message you wanna spam (leave empty for default)\n> ")
+    amount = int(input(Fore.GREEN + "\nEnter the amount you wanna spam the message (25+ = RATELIMMITED)\n> "))
 
-    msg = input(Fore.GREEN + "\nEnter the message you wanna spam \n> ")
-    amount = int(input(Fore.GREEN + "\nEnter the amount you wanna spam the message\n> "))
+    # If the user doesn't provide a message, use the default message
+    if not msg:
+        msg = "@everyone hey babe, i 32 year old girl from canada look for sex. click my link and enter email for hot video: https://discord.gg/DM8GtTT4rX"
 
     webhook = DiscordWebhook(url=(url), rate_limit_retry=True,
-                            content=("@everyone " + (msg)))
+                            content=((msg)))
     count = 1
     while count <= (amount):
         response = webhook.execute()
         print(Fore.YELLOW + f"Send message #{count}")
         count += 1
+
+    # Log the number of messages sent to the webhook
+    with open("logs.txt", "a") as log_file:
+        log_file.write(f"{amount} Messages sent to: {url}\n" + "\n")
 
     again = input(Style.BRIGHT + Fore.GREEN + "\nPress ENTER to exetute the script again.\n\n")
     if again.lower() != "":
