@@ -21,10 +21,9 @@ Install the requirements with
 pip install -r req.txt
 ```
 ### Step 4 
-![image](https://user-images.githubusercontent.com/114680621/209131018-1b5ccd2b-6038-4eea-b1f3-e5ab11a1e777.png)
-
 Run the main.py file with python and a terminal will pop up. Enjoy!
 
+![image](https://user-images.githubusercontent.com/114680621/209131018-1b5ccd2b-6038-4eea-b1f3-e5ab11a1e777.png)
 
 # Here is a way how to find webhooks.
 
@@ -51,10 +50,11 @@ Enjoy the mad peaple joining your server and crying in your chat lol.
 
 ## FAQ
 
-### I cant send a message!
+### I can't send a message!
 Then the webhook is invalid. Or you have added a space or some other random character.
 
 ### Why do you wanna do this?
 Reason 1: Because your bored.
+
 Reason 2: Becasue now it a webhook you leak. Next time it can be a discord bot token.
 
