@@ -52,5 +52,5 @@ Then the webhook is invalid. Or you have added a space or some other random char
 
 ## Why do you wanna do this?
 Reason 1: Because your bored.
-Reason 2: Becasue now it a webhook you leak. Next time it can be a admin password or a api key.
+Reason 2: Becasue now it a webhook you leak. Next time it can be a discord bot token.
 
