@@ -7,6 +7,9 @@ You can enter a discord webhook url and it will spam you're message 20 times.
 
 ### Step 1
 Go to https://www.python.org/downloads/ and download the latest version of  python.
+Make sure to select these options:
+
+![image](https://user-images.githubusercontent.com/114680621/209131496-abe55da5-8449-4348-bf97-603d6e909a2c.png)
 
 ### Step 2 
 Clone this repository
@@ -19,7 +22,40 @@ Install the requirements with
 pip install -r req.txt
 ```
 ### Step 4 
+![image](https://user-images.githubusercontent.com/114680621/209131018-1b5ccd2b-6038-4eea-b1f3-e5ab11a1e777.png)
+
 Run the main.py file with python and a terminal will pop up. Enjoy!
 
 
-## Or else you could have saved some time by just going to the release page and run the exe.
+# Here is a way to find webhooks.
+
+## Step 1:
+Go to https://github.com and create an account or login to an already existing one.
+## Step 2:
+Go to the search bar and search for: 
+```sh
+https://discord.com/api/webhooks/
+```
+## Step 3
+Click on the **code** tab.
+![image](https://user-images.githubusercontent.com/114680621/207132507-c3cf599c-9d16-40da-a869-327b2f87a9ad.png)
+## Step 4
+Select the **Recently indexed** option.
+![image](https://user-images.githubusercontent.com/114680621/207133837-08f61132-c2dd-45fc-b1d0-e4abcb21da94.png)
+## Step 5
+You will see random people post something like this and if you see something like this copy the webhook URL. 
+![image](https://user-images.githubusercontent.com/114680621/207136936-f8deee3b-4f44-475c-a2b1-90858074fef7.png)
+## Step 6 
+Then enter the webhook URL in the box and create a message to your liking and enter the amount you wanna send that message (I recomend around 5 to 25 messages or you will be rate limited)
+## Step 7
+Enjoy the mad peaple joining your server and crying in your chat lol.
+
+## FAQ
+
+### I cant send a message!
+Then the webhook is invalid. Or you have added a space or some other random character.
+
+### Why do you wanna do this?
+Reason 1: Because your bored.
+Reason 2: Becasue now it a webhook you leak. Next time it can be a discord bot token.
+
