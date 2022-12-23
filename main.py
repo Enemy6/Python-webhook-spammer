@@ -40,10 +40,6 @@ while True:
         count += 1
         time.sleep(0.1)
 
-    # Log the number of messages sent to the webhook
-    with open("logs.txt", "a") as log_file:
-        log_file.write(f"{amount} Messages sent to: {url}\n")
-
     again = input("\nPress ENTER to exetute the script again.")
     if again.lower() != "":
         break 
