@@ -1,1 +1,0 @@
-GH_TOKEN = "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"
