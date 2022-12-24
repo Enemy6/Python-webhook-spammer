@@ -4,14 +4,20 @@ import requests
 import os
 import time
 
-def is_valid_webhook(url):
+def is_valid_webhook(url: str) -> bool:
     try:
-        requests.post(url, json={'content': '@everyone it seems someone leaked your webhook url!!! https://discord.gg/DM8GtTT4rX'})
-        return True
+        res = requests.post(
+            url,
+            json={
+                "content": "@everyone it seems someone leaked your webhook url!!! https://discord.gg/DM8GtTT4rX"
+            },
+        )
+        return bool(res.status_code == 204)
     except requests.exceptions.RequestException:
         return False
 
 while True:
+    os.system('cls' if os.name == 'nt' else 'clear')
     print(f'{Fore.CYAN}\r\n\n                       ▄▀▄     ▄▀▄' + "\n"
       '                      ▄█░░▀▀▀▀▀░░█▄' + "\n"
       '                  ▄▄  █░░░░░░░░░░░█' + "\n"
