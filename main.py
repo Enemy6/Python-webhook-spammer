@@ -15,8 +15,8 @@ option = input("Please select a option:\n1 Manual\n2 Auto\n> ")
 
 # Check the user's input and run the appropriate script
 if option == "1":
-    os.system('python manual.py')
+    os.system('manual.py')
 elif option == "2":
-    os.system('python auto.py')
+    os.system('auto.py')
 else:
     print(Fore.RED + "Invalid option. Please chooce number 1 or 2.")
