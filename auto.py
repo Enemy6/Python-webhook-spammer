@@ -1,11 +1,28 @@
-from discord_webhook import DiscordWebhook
+import os
 import re
-import os
-import requests
 import time
-from colorama import Fore, Style, init
 from typing import Optional
-import os
+
+try:
+    import requests
+except ImportError:
+    raise RuntimeError(
+        "The requests module must be installed\nYou can install it with 'pip install requests'"
+    )
+try:
+    from colorama import Fore, Style, init
+except ImportError:
+    raise RuntimeError(
+        "The colorama module must be installed\nYou can install it with 'pip install colorama'"
+    )
+try:
+    from discord_webhook import DiscordWebhook
+except ImportError:
+    raise RuntimeError(
+        "The discord-webhook module must be installed\nYou can install it with 'pip install discord-webhook'"
+    )
+
+
 from __secrets__ import GH_TOKEN
 
 init(autoreset=True)
@@ -129,7 +146,7 @@ def ask(msg, convertor):
 
 
 def main():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system("cls" if os.name == "nt" else "clear")
     print(
         f"{Fore.CYAN}\r\n\n                       ▄▀▄     ▄▀▄" + "\n"
         "                      ▄█░░▀▀▀▀▀░░█▄" + "\n"
