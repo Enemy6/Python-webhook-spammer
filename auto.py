@@ -57,7 +57,10 @@ def use_code(url: str, msg: str, amount: int):
     webhook = DiscordWebhook(url=(url), rate_limit_retry=True, content=((msg)))
     count = 1
     while count <= (amount):
-        webhook.execute()
+        try:
+            webhook.execute()
+        except AttributeError:
+            pass
         print(Fore.YELLOW + f"Send message #{count}")
         count += 1
 
