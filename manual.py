@@ -25,7 +25,7 @@ while True:
       "\n"
       "                 Author: Kars#9142\n"
       "                 GitHub: https://github.com/ArabicCat\n\n")
-    url = input(f"{Fore.GREEN}Enter the url you wanna spam (leave empty for default) \n> ")
+    url = input(f"{Fore.GREEN}Enter the webhook URL you wanna spam (leave empty for default) \n> ")
 
     if not is_valid_webhook(url):
         print(f"{Fore.RED}Error: Invalid webhook URL")
