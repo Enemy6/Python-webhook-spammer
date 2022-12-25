@@ -129,9 +129,9 @@ def loop(msg: str, amount: int):
 
     TO_REMOVE = ('"', "'")
 
-    if webhook_url.endswith(TO_REMOVE):
-        for item in TO_REMOVE:
-            webhook_url = webhook_url.removesuffix(item)
+    for item in TO_REMOVE:
+        if item in webhook_url:
+            webhook_url = webhook_url.split(item)[0]
 
     print(f"{Fore.GREEN}Found {Style.RESET_ALL}{webhook_url}")
 
