@@ -96,7 +96,7 @@ def get_result() -> Optional[str]:
     try:
         url = data["items"][0]["html_url"]
     except IndexError:
-        print(f"{Fore.BLUE}Github sent no items, retrying in 30 seconds")
+        print(f"{Fore.RED}Github sent no items, retrying in 30 seconds")
         time.sleep(30)
         print(f"{Fore.BLUE}Done sleeping, retrying")
         return get_result()
