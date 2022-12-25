@@ -21,15 +21,14 @@ except ImportError:
     raise RuntimeError(
         "The requests module must be installed\nYou can install it with 'pip install requests'"
     )
+DEFAULT_MESSAGE = "@everyone it seems someone leaked your webhook url!!! https://discord.gg/DM8GtTT4rX"
 
 
 def is_valid_webhook(url: str) -> bool:
     try:
         res = requests.post(
             url,
-            json={
-                "content": "@everyone it seems someone leaked your webhook url!!! https://discord.gg/DM8GtTT4rX"
-            },
+            json={"content": DEFAULT_MESSAGE},
         )
         return bool(res.status_code == 204)
     except requests.exceptions.RequestException:
@@ -72,7 +71,7 @@ def main():
 
         # If the user doesn't provide a message, use the default message
         if not msg:
-            msg = "@everyone it seems someone leaked your webhook url!!! https://discord.gg/DM8GtTT4rX"
+            msg = DEFAULT_MESSAGE
 
         webhook = DiscordWebhook(url=(url), rate_limit_retry=True, content=((msg)))
         count = 1

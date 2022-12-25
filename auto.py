@@ -28,6 +28,7 @@ from __secrets__ import GH_TOKEN
 init(autoreset=True)
 
 GITHUB_URL = "https://api.github.com/search/code"
+DEFAULT_MESSAGE = "@everyone it seems someone leaked your webhook url!!! https://discord.gg/DM8GtTT4rX"
 
 
 class DataStorage:
@@ -42,9 +43,7 @@ def is_valid_webhook(url: str) -> bool:
     try:
         res = requests.post(
             url,
-            json={
-                "content": "@everyone it seems someone leaked your webhook url!!! https://discord.gg/DM8GtTT4rX"
-            },
+            json={"content": DEFAULT_MESSAGE},
         )
         return bool(res.status_code == 204)
     except requests.exceptions.RequestException:
@@ -87,17 +86,19 @@ def get_result() -> Optional[str]:
     data = github_data.json()
 
     if "documentation_url" in data.keys():
+        if data["message"] == "Bad credentials":
+            raise Exception("Invalid Token")
         print(f"{Fore.LIGHTMAGENTA_EX}We are being ratelimited, sleeping for 3 minutes")
         time.sleep(60 * 3)
-        print(f"{Fore.MAGENTA}Done sleeping, retrying")
+        print(f"{Fore.LIGHTMAGENTA_EX}Done sleeping, retrying")
         return get_result()
 
     try:
         url = data["items"][0]["html_url"]
     except IndexError:
-        print(f"{Fore.LIGHTMAGENTA_EX}Github sent no items, retrying in 30 seconds")
+        print(f"{Fore.RED}Github sent no items, retrying in 30 seconds")
         time.sleep(30)
-        print(f"{Fore.MAGENTA}Done sleeping, retrying")
+        print(f"{Fore.BLUE}Done sleeping, retrying")
         return get_result()
 
     if url == data_storage.last:
@@ -126,11 +127,11 @@ def loop(msg: str, amount: int):
 
     webhook_url = found[0]
 
-    TO_REMOVE = ('"', "'")
+    TO_REMOVE = ('"', "'", "`", ")", "(", "[", "]", "{", "}")
 
-    if webhook_url.endswith(TO_REMOVE):
-        for item in TO_REMOVE:
-            webhook_url = webhook_url.removesuffix(item)
+    for item in TO_REMOVE:
+        if item in webhook_url:
+            webhook_url = webhook_url.split(item)[0]
 
     print(f"{Fore.GREEN}Found {Style.RESET_ALL}{webhook_url}")
 
@@ -170,7 +171,7 @@ def main():
     )
 
     if not msg:
-        msg = "@everyone it seems someone leaked your webhook url!!! https://discord.gg/DM8GtTT4rX"
+        msg = DEFAULT_MESSAGE
 
     while True:
         loop(msg, amount)
