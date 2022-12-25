@@ -127,7 +127,7 @@ def loop(msg: str, amount: int):
 
     webhook_url = found[0]
 
-    TO_REMOVE = ('"', "'")
+    TO_REMOVE = ('"', "'", "`", ")", "(", "[", "]", "{", "}")
 
     for item in TO_REMOVE:
         if item in webhook_url:
