@@ -20,7 +20,7 @@ import os
 import sys
 
 init()
-
+os.system("cls" if os.name == "nt" else "clear")
 
 def main():
     option = input(f"Please select a option:\n1 Manual\n2 Auto\n> ")
