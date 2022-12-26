@@ -23,12 +23,13 @@ except ImportError:
     )
 
 
-from __secrets__ import GH_TOKEN
+GH_TOKEN = "YOUR CLASSIC GITHUB TOKEN"
 
 init(autoreset=True)
 
 GITHUB_URL = "https://api.github.com/search/code"
-DEFAULT_MESSAGE = "@everyone it seems someone leaked your webhook url!!! https://discord.gg/DM8GtTT4rX"
+msg = "@everyone it seems someone leaked your webhook url!!! https://discord.gg/DM8GtTT4rX"
+amount = "25"
 
 
 class DataStorage:
@@ -43,7 +44,7 @@ def is_valid_webhook(url: str) -> bool:
     try:
         res = requests.post(
             url,
-            json={"content": DEFAULT_MESSAGE},
+            json={"content": msg},
         )
         return bool(res.status_code == 204)
     except requests.exceptions.RequestException:
@@ -62,9 +63,6 @@ def use_code(url: str, msg: str, amount: int):
             pass
         print(Fore.YELLOW + f"Send message #{count}")
         count += 1
-
-    with open("logs.txt", "a") as f:
-        f.write(f"{count} messages were sent to {url}\n\n")
 
     print(f"{Fore.BLUE}Done with {Style.RESET_ALL}{url}")
 
@@ -161,17 +159,6 @@ def main():
         "                 GitHub: https://github.com/ArabicCat\n"
         "                 Credits: Thanks to cibere#0001 for create the automated version!\n\n"
     )
-
-    msg = input(
-        f"{Fore.GREEN}Enter the message you wanna spam (leave empty for default)\n> "
-    )
-    amount = ask(
-        f"{Fore.GREEN}\nEnter the amount you wanna spam the message (25+ = RATELIMMITED)\n> ",
-        int,
-    )
-
-    if not msg:
-        msg = DEFAULT_MESSAGE
 
     while True:
         loop(msg, amount)
