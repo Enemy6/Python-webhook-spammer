@@ -1,8 +1,11 @@
-# Keep in mind!!!
-The main.py file is broken. if you select a option somethimes is does not launch. Just op the manual or auto.py file yourself and i works.
-
 # Python-webhook-spammer
-This simple python program can spam a webhook with any message to you're liking. You can enter a discord webhook url and it will spam you're message how many times you request.
+This simple python program can spam a webhook with any message to you're liking. And it will find leaked webhooks for you so you can sit back and relax.
 
 ## If you wanna know how to get started check out our wiki
 * https://github.com/ArabicCat/Python-webhook-spammer/wiki
+
+### Why did the manual version got deleted?
+It got deleted because we now have a discord bot that can do that so for some peaple its easyer. But in the #old channel is the file if you still wanna use it
+
+### Questions?
+Join our discord server: https://discord.gg/DM8GtTT4rX
