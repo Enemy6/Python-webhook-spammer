@@ -4,6 +4,8 @@ This simple python program can spam a webhook with any message to you're liking.
 ##How to install it
 
 ### Windows
+`https://www.python.org/downloads/`
+
 `git clone https://github.com/ArabicCat/Python-webhook-spammer`
 
 `cd Python-webhook-spammer`
