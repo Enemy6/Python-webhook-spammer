@@ -1,7 +1,9 @@
 # Python-webhook-spammer
 This simple python program can spam a webhook with any message to you're liking.
 
-## Windows
+##How to install it
+
+### Windows
 `git clone https://github.com/ArabicCat/Python-webhook-spammer`
 
 `cd Python-webhook-spammer`
@@ -10,7 +12,7 @@ This simple python program can spam a webhook with any message to you're liking.
 
 `python3 main.py` OR `python main.py`
 
-## Linux (ubuntu, debian kali)
+### Linux (ubuntu, debian kali)
 `sudo apt install git python3`
 
 `git clone https://github.com/ArabicCat/Python-webhook-spammer`
@@ -21,5 +23,5 @@ This simple python program can spam a webhook with any message to you're liking.
 
 `python3 main.py`
 
-## Mac
+### Mac
 bruh
