@@ -1,7 +1,7 @@
 # Python-webhook-spammer
 This simple python program can spam a webhook with any message to you're liking.
 
-##How to install it
+## How to install it
 
 ### Windows
 Install python
