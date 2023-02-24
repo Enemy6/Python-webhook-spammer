@@ -1,3 +1,2 @@
 Discord-Webhook
 colorama
-requests
