@@ -20,7 +20,7 @@ except ImportError:
     raise RuntimeError(
         "The requests module must be installed\nYou can install it with 'pip install requests'"
     )
-DEFAULT_MESSAGE = "@everyone it seems someone leaked your webhook url!!!"
+DEFAULT_MESSAGE = "@everyone webhooked by someone???"
 
 
 def is_valid_webhook(url: str) -> bool:
